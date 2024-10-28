@@ -23,6 +23,10 @@ namespace AleFogacho_ExamenP1.Controllers
         {
             return View(await _context.AF_Cita.ToListAsync());
         }
+        public async Task<IActionResult> AF_Index()
+        {
+            return View(await _context.AF_Cita.ToListAsync());
+        }
 
         // GET: AF_Cita/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -47,25 +51,29 @@ namespace AleFogacho_ExamenP1.Controllers
         {
             return View();
         }
+        public IActionResult AF_Create()
+        {
+            return View();
+        }
 
         // POST: AF_Cita/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AF_CitaId,AF_FechaIngreso,AF_NombreCita,AF_Detalle,AF_ValorCita,AF_Seguro")] AF_Cita aF_Cita)
+        public async Task<IActionResult> AF_Create([Bind("AF_CitaId,AF_FechaIngreso,AF_NombreCita,AF_Detalle,AF_ValorCita,AF_Seguro")] AF_Cita aF_Cita)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(aF_Cita);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(AF_Index));
             }
             return View(aF_Cita);
         }
 
         // GET: AF_Cita/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> AF_Edit(int? id)
         {
             if (id == null)
             {
@@ -85,7 +93,7 @@ namespace AleFogacho_ExamenP1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AF_CitaId,AF_FechaIngreso,AF_NombreCita,AF_Detalle,AF_ValorCita,AF_Seguro")] AF_Cita aF_Cita)
+        public async Task<IActionResult> AF_Edit(int id, [Bind("AF_CitaId,AF_FechaIngreso,AF_NombreCita,AF_Detalle,AF_ValorCita,AF_Seguro")] AF_Cita aF_Cita)
         {
             if (id != aF_Cita.AF_CitaId)
             {
@@ -110,13 +118,13 @@ namespace AleFogacho_ExamenP1.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(AF_Index));
             }
             return View(aF_Cita);
         }
 
         // GET: AF_Cita/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> AF_Delete(int? id)
         {
             if (id == null)
             {
@@ -145,7 +153,7 @@ namespace AleFogacho_ExamenP1.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(AF_Index));
         }
 
         private bool AF_CitaExists(int id)
