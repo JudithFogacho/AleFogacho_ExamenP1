@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AleFogacho_ExamenP1.Models.AF_Cita>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AF_FechaIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AF_NombreCita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AF_Detalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AF_ValorCita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AF_Seguro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AF_FechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AF_NombreCita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AF_Detalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AF_ValorCita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AF_Seguro)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AF_CitaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AF_CitaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AF_CitaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

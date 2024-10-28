@@ -1,0 +1,48 @@
+﻿@model AleFogacho_ExamenP1.Models.AF_Cita
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AF_Cita</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AF_FechaIngreso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AF_FechaIngreso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AF_NombreCita)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AF_NombreCita)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AF_Detalle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AF_Detalle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AF_ValorCita)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AF_ValorCita)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AF_Seguro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AF_Seguro)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AF_CitaId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

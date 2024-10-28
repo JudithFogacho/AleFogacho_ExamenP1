@@ -1,0 +1,53 @@
+﻿@model AleFogacho_ExamenP1.Models.AF_Cita
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AF_Cita</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AF_FechaIngreso" class="control-label"></label>
+                <input asp-for="AF_FechaIngreso" class="form-control" />
+                <span asp-validation-for="AF_FechaIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AF_NombreCita" class="control-label"></label>
+                <input asp-for="AF_NombreCita" class="form-control" />
+                <span asp-validation-for="AF_NombreCita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AF_Detalle" class="control-label"></label>
+                <input asp-for="AF_Detalle" class="form-control" />
+                <span asp-validation-for="AF_Detalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AF_ValorCita" class="control-label"></label>
+                <input asp-for="AF_ValorCita" class="form-control" />
+                <span asp-validation-for="AF_ValorCita" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AF_Seguro" /> @Html.DisplayNameFor(model => model.AF_Seguro)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

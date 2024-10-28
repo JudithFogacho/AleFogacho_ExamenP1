@@ -8,6 +8,7 @@ namespace AleFogacho_ExamenP1.Models
         [Key]
         public int AF_CitaId { get; set; }
         [Required]
+        [DataType (DataType.DateTime)]
         public DateTime AF_FechaIngreso { get; set; }
         [Required]
         public string? AF_NombreCita { get; set;}
